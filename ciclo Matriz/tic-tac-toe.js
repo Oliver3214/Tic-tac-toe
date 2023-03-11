@@ -1,5 +1,5 @@
 
-//juego de Tic tac Toe 
+//juego de Tic tac Toe
 function primer_jugador(columna1,fila1) {
     var jugador1="X";
     vectorA[columna1][fila1]=jugador1;
@@ -8,18 +8,22 @@ function segundo_jugador(columna2,fila2) {
     var jugador2="O";
     vectorA[columna2][fila2]=jugador2;
 };
+
+
 //funcion que inicia el juego y que manipula los turnos
 function Iniciarjuego() {
-    //Matriz hecha con ciclo For 
+    //Matriz hecha con ciclo For
     vectorA = [];
     for (let y = 0; y < 3; y++) {
         var vectorB = [];
-        for (let x = 0; x < 3; x++) { 
+        for (let x = 0; x < 3; x++) {
             vectorB[x]="_";
         }
      vectorA[y]=vectorB;
     }
-    //ciclo que realiza la validacion de los turnos 
+
+
+    //ciclo que realiza la validacion de los turnos
     var j1=1;
     for (let i = 0; i <5; i++) {
         if (j1==1) {
@@ -27,10 +31,10 @@ function Iniciarjuego() {
             var numero2 =prompt("ingrese numero de la fila");
             if (numero1 <= 2  && numero2 <= 2) {
                primer_jugador(numero1,numero2);
-               //se utiliza un JSN para crear un objeto y validar el arreglo en una cadena string 
+               //se utiliza un JSN para crear un objeto y validar el arreglo en una cadena string
                //que guarda cada paso que realiza el bucle
                console.log(JSON.parse(JSON.stringify(vectorA)));
-               ganador() 
+               ganador()
             }else{
                 console.log('El dato no puede ser ingresado');
                 return false;
@@ -90,3 +94,4 @@ function ganador() {
         }
     
 }
+Iniciarjuego();
